@@ -1,0 +1,13 @@
+#!/bin/python3
+from rembg import remove
+from PIL import Image
+import sys
+if len(sys.argv) == 3:
+    input_file = sys.argv[1]
+    output_file = sys.argv[2]
+    userImg = Image.open(input_file)
+    bgRemovedImg = remove(userImg)
+    bgRemovedImg.save(output_file)
+
+else:
+    print("Usage: {0} <input_file> <output_file>\n".format(sys.argv[0]))
